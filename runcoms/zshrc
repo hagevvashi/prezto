@@ -13,6 +13,9 @@ fi
 # Customize to your needs...
 alias ll='ls -la'
 
+export VISUAL=emacsclient
+export EDITOR=emacsclient
+
 path=(
   /usr/local/opt/ncurses/bin(N-/)
   /usr/local/Cellar/openssl/1.0.2j/bin
