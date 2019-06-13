@@ -20,6 +20,7 @@ export EDITOR=emacsclient
 path=(
   /usr/local/opt/ncurses/bin(N-/)
   /usr/local/Cellar/openssl/1.0.2j/bin
+  $HOME/Applications/homebrew/bin
   $HOME/.rbenv/bin
   $HOME/.yarn/bin
   $HOME/.local/bin
@@ -27,10 +28,11 @@ path=(
   $path
 )
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_CACHE=$HOME/Applications/homebrew/cache
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 
 eval "$(rbenv init -)"
-# eval "$(nodenv init -)"
+eval "$(nodenv init -)"
 eval "$(direnv hook zsh)"
 
 setopt nonomatch
