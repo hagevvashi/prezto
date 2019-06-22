@@ -36,3 +36,23 @@ eval "$(nodenv init -)"
 eval "$(direnv hook zsh)"
 
 setopt nonomatch
+
+rimraf() {
+  echo "rm -rf $@ ??"
+  read input
+
+  if [ -z $input ] ; then
+    echo "must type y or n"
+    rimraf
+  elif [ $input = 'yes' ] || [ $input = 'YES' ] || [ $input = 'y' ] ; then
+    echo "rm -rf $@ ..."
+  elif [ $input = 'no' ] || [ $input = 'NO' ] || [ $input = 'n' ] ; then
+    echo "cancel"
+    exit 1
+  else
+    echo "must type y or n"
+    rimraf
+  fi
+
+  command rm -rf $@
+}
