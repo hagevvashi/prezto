@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+alias ls="gls --color=always"
 alias ll='ls -l'
 alias e='emacsclient -nw'
 
@@ -26,6 +27,11 @@ path=(
   $HOME/.rbenv/bin
   $path
 )
+
+# color setting
+if type dircolors >/dev/null; then
+  eval `dircolors $HOME/.dir_colors`
+fi
 
 export HOMEBREW_CACHE=$HOME/Applications/homebrew/cache
 export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
