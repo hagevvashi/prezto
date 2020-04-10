@@ -23,7 +23,6 @@ path=(
   /usr/local/Cellar/openssl/1.0.2j/bin
   $HOME/Applications/homebrew/bin
   $HOME/Applications/homebrew/opt/coreutils/libexec/gnubin
-  $HOME/node-default-packages/node_modules/.bin
   $HOME/.rbenv/bin
   $path
 )
