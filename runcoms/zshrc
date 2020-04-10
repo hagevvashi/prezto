@@ -19,8 +19,6 @@ export VISUAL=emacsclient
 export EDITOR=emacsclient
 
 path=(
-  /usr/local/opt/ncurses/bin(N-/)
-  /usr/local/Cellar/openssl/1.0.2j/bin
   $HOME/Applications/homebrew/bin
   $HOME/Applications/homebrew/opt/coreutils/libexec/gnubin
   $HOME/.rbenv/bin
