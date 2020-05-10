@@ -39,21 +39,21 @@ eval "$(direnv hook zsh)"
 
 setopt nonomatch
 
-rimraf() {
+rimrafconf() {
   echo "rm -rf $@ ??"
   read input
 
   if [ -z $input ] ; then
     echo "must type y or n"
-    rimraf
+    rimrafconf
   elif [ $input = 'yes' ] || [ $input = 'YES' ] || [ $input = 'y' ] ; then
     echo "rm -rf $@ ..."
   elif [ $input = 'no' ] || [ $input = 'NO' ] || [ $input = 'n' ] ; then
     echo "cancel"
-    exit 1
+    return
   else
     echo "must type y or n"
-    rimraf
+    rimrafconf
   fi
 
   command rm -rf $@
