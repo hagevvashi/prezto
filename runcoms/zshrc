@@ -18,9 +18,12 @@ alias e='emacsclient -nw'
 export VISUAL=emacsclient
 export EDITOR=emacsclient
 
+export PKG_CONFIG_PATH=$HOME/Applications/homebrew/lib/pkgconfig:$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
+
 path=(
   $HOME/Applications/homebrew/bin
   $HOME/Applications/homebrew/opt/coreutils/libexec/gnubin
+  $HOME/.local/bin
   $HOME/.rbenv/bin
   $path
 )
